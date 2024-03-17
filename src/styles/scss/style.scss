@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+$dark: #2a2a2a;
+$text-green: #4e6108;
+$dark-green: #586f08;
+$light-green: #93ad18;
+$white: #fff;
+$light-grey: #eeeeee;
+@import "../scss/libs/employee-table.scss";
+
+body {
+  margin: 0;
+  color: $dark;
+  font-family: "Montserrat";
+  background-color: $light-grey;
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $white;
+    width: 100%;
+    padding: 0 10%;
+    box-sizing: border-box;
+    box-shadow: 0 0 64px rgba(0, 0, 0, 0.16);
+    a {
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .text-logo {
+      font-size: 48px;
+      color: $light-green;
+      display: flex;
+      align-items: center;
+      img {
+        width: 96px;
+      }
+    }
+    nav {
+      a {
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: $dark;
+        padding: 24px;
+        background-color: $light-grey;
+        border-radius: 40px;
+        height: 40px;
+        box-sizing: border-box;
+        i {
+          font-size: 24px;
+        }
+      }
+    }
+  }
+
+  h1 {
+    color: $light-green;
+    font-size: 32px;
+    margin: 48px 0;
+    text-align: center;
+  }
+
+  .create-employee {
+    max-width: 650px;
+    margin: auto;
+  }
+
+  form.new-employee-form {
+    background-color: white;
+    padding: 32px;
+    display: grid;
+    gap: 16px;
+    border-radius: 16px;
+    box-shadow: 0 0 64px rgba(0, 0, 0, 0.16);
+    .input-container {
+      display: grid;
+      grid-template-columns: 1fr 3fr;
+      align-items: center;
+      > label + * {
+        height: 40px;
+        border-radius: 32px;
+        padding: 0 16px;
+        border: 1px solid $dark-green;
+        box-sizing: border-box;
+        font-size: 16px;
+        font-family: "Montserrat";
+      }
+    }
+  }
+
+  .button {
+    height: 48px;
+    padding: 0 16px;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: "Montserrat";
+    border-radius: 32px;
+    cursor: pointer;
+    margin: 24px 0 0 0;
+    border: none;
+    background-color: $light-green;
+    color: $white;
+    width: 100%;
+    font-weight: 700;
+  }
+
+  .container {
+    margin: auto;
+    max-width: 90%;
+  }
+
+  nav a,
+  button,
+  input {
+    transition: all 100ms ease;
+  }
+
+  nav a:hover,
+  button:hover,
+  input:hover,
+  button:focus,
+  input:focus {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+  }
+
+  input:focus-visible {
+    outline: none;
+  }
+
+  footer {
+    padding: 48px 0;
+    text-align: center;
+  }
+}

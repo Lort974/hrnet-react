@@ -1,0 +1,77 @@
+{
+  "inputs": [
+    {
+      "type": "text",
+      "id": "firstname",
+      "name": "firstname",
+      "label": "First Name",
+      "order": "1"
+    },
+    {
+      "type": "text",
+      "id": "lastname",
+      "name": "lastname",
+      "label": "Last Name",
+      "order": "2"
+    },
+    {
+      "type": "text",
+      "id": "address",
+      "name": "address",
+      "label": "Address",
+      "order": "5"
+    },
+    {
+      "type": "text",
+      "id": "city",
+      "name": "city",
+      "label": "City",
+      "order": "6"
+    },
+    {
+      "type": "number",
+      "id": "zipcode",
+      "name": "zipcode",
+      "label": "Zip Code",
+      "order": "8"
+    }
+  ],
+  "dateInputs": [
+    {
+      "type": "text",
+      "id": "dateofbirth",
+      "name": "dateofbirth",
+      "label": "Date of Birth",
+      "order": "3"
+    },
+    {
+      "type": "text",
+      "id": "startdate",
+      "name": "startdate",
+      "label": "Start Date",
+      "order": "4"
+    }
+  ],
+  "selects": [
+    {
+      "id": "state",
+      "name": "state",
+      "label": "State",
+      "options": [],
+      "order": "7"
+    },
+    {
+      "id": "department",
+      "name": "department",
+      "label": "Department",
+      "options": [
+        "Sales",
+        "Marketing",
+        "Engineering",
+        "Human Ressources",
+        "Legal"
+      ],
+      "order": "9"
+    }
+  ]
+}

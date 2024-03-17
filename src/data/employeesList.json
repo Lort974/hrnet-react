@@ -1,0 +1,57 @@
+[
+  {
+    "firstName": "Jeremy",
+    "lastName": "Martinson",
+    "startDate": "2020-12-02",
+    "department": "Sales",
+    "dateOfBirth": "1982-02-05",
+    "address": "455 Larkspur Dr.",
+    "city": "California Springs",
+    "state": "CA",
+    "zipCode": "92926"
+  },
+  {
+    "firstName": "Joanna",
+    "lastName": "Smith",
+    "startDate": "2018-06-24",
+    "department": "Marketing",
+    "dateOfBirth": "1988-11-30",
+    "address": "670 Mary Fort",
+    "city": "Clineport",
+    "state": "AR",
+    "zipCode": "12443"
+  },
+  {
+    "firstName": "James",
+    "lastName": "Wilson",
+    "startDate": "2021-03-26",
+    "department": "Engineering",
+    "dateOfBirth": "1993-05-17",
+    "address": "Ashley Tunnel",
+    "city": "Port Robertmouth",
+    "state": "VA",
+    "zipCode": "70203"
+  },
+  {
+    "firstName": "William",
+    "lastName": "Jones",
+    "startDate": "2020-08-15",
+    "department": "Human Ressources",
+    "dateOfBirth": "1985-10-25",
+    "address": "4508 Potter Islands",
+    "city": "Travischester",
+    "state": "NE",
+    "zipCode": "84004"
+  },
+  {
+    "firstName": "Kate",
+    "lastName": "Miller",
+    "startDate": "2022-04-12",
+    "department": "Legal",
+    "dateOfBirth": "2000-01-22",
+    "address": "43733 Jeremiah Shore Suite 193",
+    "city": "East Jason",
+    "state": "OK",
+    "zipCode": "47020"
+  }
+]
