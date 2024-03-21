@@ -125,6 +125,12 @@ body {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
   }
 
+  .employees-table-wrapper > div:nth-child(1) > input:hover,
+  .employees-table-wrapper > div:nth-child(1) > input:focus,
+  .employees-table-wrapper > div:nth-child(1) > span:hover {
+    box-shadow: none;
+  }
+
   input:focus-visible {
     outline: none;
   }
@@ -132,5 +138,173 @@ body {
   footer {
     padding: 48px 0;
     text-align: center;
+  }
+
+  .react-datepicker__tab-loop {
+    position: absolute;
+  }
+  .react-datepicker {
+    font-family: "Montserrat";
+    color: $dark;
+    border-radius: 16px;
+    overflow: hidden;
+    padding: 16px;
+    .calendar-title {
+      background: $light-green;
+      text-align: center;
+      padding: 8px;
+      color: $white;
+      font-weight: 700;
+      border-radius: 16px;
+    }
+    .calendar-layout {
+      .react-datepicker__navigation {
+        height: 40px;
+        width: 40px;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        .react-datepicker__navigation-icon::before {
+          border-color: $dark;
+        }
+      }
+      .react-datepicker__navigation:hover {
+        box-shadow: none;
+        background-color: $light-grey;
+      }
+      .react-datepicker__navigation:focus {
+        box-shadow: none;
+      }
+      .react-datepicker__month-container {
+        .react-datepicker__header {
+          background: none;
+          .react-datepicker__current-month {
+            height: 40px;
+          }
+        }
+        .react-datepicker__month {
+          .react-datepicker__day {
+            border-radius: 50%;
+            color: $dark-green;
+          }
+          .react-datepicker__day:hover {
+            background: $light-grey;
+          }
+          .react-datepicker__day--selected {
+            background: $light-green;
+            color: $white;
+            font-weight: 700;
+          }
+          .react-datepicker__day--selected:hover {
+            background: $light-green;
+          }
+          .react-datepicker__day--outside-month {
+            color: #aaaaaa;
+          }
+          .react-datepicker__day--disabled {
+            background-color: #aaaaaa;
+            color: #aaaaaa;
+            cursor: not-allowed;
+          }
+          .react-datepicker__day--disabled:hover {
+            background-color: #aaaaaa;
+            color: #aaaaaa;
+            cursor: not-allowed;
+          }
+          .react-datepicker__day--today {
+            font-weight: unset;
+          }
+          .react-datepicker__day--keyboard-selected {
+            background-color: #c9d786;
+          }
+        }
+      }
+    }
+  }
+  .employee-modal {
+    width: auto;
+    border-radius: 16px;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    padding: 16px;
+    background: $white;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+    p {
+      margin: 0 0 16px 0;
+    }
+    button {
+      font-family: "Montserrat";
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 40px;
+      width: 40px;
+      margin: auto;
+      background-color: $light-grey;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+  }
+
+  .css-13cymwt-control {
+    border: none;
+    border-radius: 32px;
+    box-shadow: none;
+  }
+  .css-t3ipsp-control {
+    border: none;
+    box-shadow: none;
+    border-radius: 32px;
+    input {
+      box-shadow: none;
+    }
+  }
+  .input-container:has(.css-b62m3t-container) > label + * {
+    padding: 0 !important;
+    transition: all 100ms ease;
+  }
+  .css-166bipr-Input,
+  .css-qbdosj-Input {
+    cursor: text;
+  }
+  .input-container:has(.css-b62m3t-container) > label + *:hover,
+  .input-container:has(.css-b62m3t-container) > label:hover + * {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+  }
+  .css-1nmdiq5-menu {
+    //list container
+    border-radius: 16px;
+    overflow: hidden;
+    border: none;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+    .css-1n6sfyn-MenuList {
+      //list
+      padding: 0;
+      border-radius: 16px;
+      border: none;
+      .css-10wo9uf-option {
+        //element
+        color: $dark-green;
+      }
+      .css-d7l1ni-option {
+        //element:hover
+        background-color: $light-grey;
+        color: $dark-green;
+      }
+      .css-tr4s17-option {
+        //element:selected
+        background-color: $light-green;
+        color: $white;
+        font-weight: 700;
+      }
+    }
+  }
+
+  .input-container:has(input:focus) > label + * {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
   }
 }

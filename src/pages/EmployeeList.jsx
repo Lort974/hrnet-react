@@ -1,7 +1,34 @@
-import employeesList from "../data/employeesList.json";
+import { useEffect, useState } from "react";
 import DataTableWrapper from "../DataTablePlugIn/DataTableWrapper";
+import { getEmployees } from "../services/api";
 
 const EmployeeList = () => {
+  const [employeesList, setEmployeesList] = useState([]);
+  const [response, setResponse] = useState(null);
+
+  useEffect(() => {
+    const fetchEmployees = async () => {
+      const res = await getEmployees();
+      setEmployeesList(res.data);
+      setResponse(res);
+    };
+
+    fetchEmployees();
+  }, []);
+
+  if (response) {
+    if (response.status === "error") {
+      return (
+        <>
+          <div id="employee-div" className="container">
+            <h1>Current Employees</h1>
+            <p>{response.data}</p>
+          </div>
+        </>
+      );
+    }
+  }
+
   return (
     <>
       <div id="employee-div" className="container">

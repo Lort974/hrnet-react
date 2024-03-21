@@ -11,16 +11,9 @@ const Home = () => {
           inputs={fields.inputs}
           dateInputs={fields.dateInputs}
           selects={fields.selects}
+          formId="new-employee-form"
         />
-
-        <button className="button" form="create-employee">
-          Save
-        </button>
       </section>
-
-      <div id="confirmation" className="modal">
-        Employee Created!
-      </div>
     </>
   );
 };

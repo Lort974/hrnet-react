@@ -47,12 +47,14 @@
   box-sizing: border-box;
   background-color: #93ad18;
   border-radius: 50%;
+  cursor: pointer;
 }
 .employees-table-wrapper > :nth-child(1) > span > svg {
   fill: #fff;
 }
 .employees-table-wrapper > :nth-child(1):has(input:hover),
-.employees-table-wrapper > :nth-child(1):has(input:focus) {
+.employees-table-wrapper > :nth-child(1):has(input:focus),
+.employees-table-wrapper > :nth-child(1):has(span:hover) {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
 }
 .employees-table-wrapper table {
@@ -84,7 +86,8 @@
   position: relative;
 }
 .employees-table-wrapper table thead tr th > span:nth-child(1) {
-  margin-left: 12px;
+  margin-left: 10px;
+  display: inline-block;
 }
 .employees-table-wrapper table thead tr th > span:nth-child(2) {
   position: absolute;
@@ -102,7 +105,7 @@
   padding-left: 8px;
 }
 .employees-table-wrapper table thead tr th:first-child > span:nth-child(1) {
-  margin-left: 8px;
+  margin-left: 6px;
 }
 .employees-table-wrapper table thead tr th:last-child {
   border-top-right-radius: 40px;
@@ -155,9 +158,14 @@
   font-size: 16px;
   font-family: "Montserrat";
   background: #eeeeee;
+  transition: all 100ms ease;
 }
 .employees-table-wrapper > :nth-child(3) > select:focus-visible {
   outline: none;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+}
+.employees-table-wrapper > :nth-child(3) > select:hover {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
 }
 .employees-table-wrapper > :nth-child(4) {
   grid-area: table-info;
@@ -302,12 +310,171 @@ body button:focus,
 body input:focus {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
 }
+body .employees-table-wrapper > div:nth-child(1) > input:hover,
+body .employees-table-wrapper > div:nth-child(1) > input:focus,
+body .employees-table-wrapper > div:nth-child(1) > span:hover {
+  box-shadow: none;
+}
 body input:focus-visible {
   outline: none;
 }
 body footer {
   padding: 48px 0;
   text-align: center;
+}
+body .react-datepicker__tab-loop {
+  position: absolute;
+}
+body .react-datepicker {
+  font-family: "Montserrat";
+  color: #2a2a2a;
+  border-radius: 16px;
+  overflow: hidden;
+  padding: 16px;
+}
+body .react-datepicker .calendar-title {
+  background: #93ad18;
+  text-align: center;
+  padding: 8px;
+  color: #fff;
+  font-weight: 700;
+  border-radius: 16px;
+}
+body .react-datepicker .calendar-layout .react-datepicker__navigation {
+  height: 40px;
+  width: 40px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+body .react-datepicker .calendar-layout .react-datepicker__navigation .react-datepicker__navigation-icon::before {
+  border-color: #2a2a2a;
+}
+body .react-datepicker .calendar-layout .react-datepicker__navigation:hover {
+  box-shadow: none;
+  background-color: #eeeeee;
+}
+body .react-datepicker .calendar-layout .react-datepicker__navigation:focus {
+  box-shadow: none;
+}
+body .react-datepicker .calendar-layout .react-datepicker__month-container .react-datepicker__header {
+  background: none;
+}
+body .react-datepicker .calendar-layout .react-datepicker__month-container .react-datepicker__header .react-datepicker__current-month {
+  height: 40px;
+}
+body .react-datepicker .calendar-layout .react-datepicker__month-container .react-datepicker__month .react-datepicker__day {
+  border-radius: 50%;
+  color: #586f08;
+}
+body .react-datepicker .calendar-layout .react-datepicker__month-container .react-datepicker__month .react-datepicker__day:hover {
+  background: #eeeeee;
+}
+body .react-datepicker .calendar-layout .react-datepicker__month-container .react-datepicker__month .react-datepicker__day--selected {
+  background: #93ad18;
+  color: #fff;
+  font-weight: 700;
+}
+body .react-datepicker .calendar-layout .react-datepicker__month-container .react-datepicker__month .react-datepicker__day--selected:hover {
+  background: #93ad18;
+}
+body .react-datepicker .calendar-layout .react-datepicker__month-container .react-datepicker__month .react-datepicker__day--outside-month {
+  color: #aaaaaa;
+}
+body .react-datepicker .calendar-layout .react-datepicker__month-container .react-datepicker__month .react-datepicker__day--disabled {
+  background-color: #aaaaaa;
+  color: #aaaaaa;
+  cursor: not-allowed;
+}
+body .react-datepicker .calendar-layout .react-datepicker__month-container .react-datepicker__month .react-datepicker__day--disabled:hover {
+  background-color: #aaaaaa;
+  color: #aaaaaa;
+  cursor: not-allowed;
+}
+body .react-datepicker .calendar-layout .react-datepicker__month-container .react-datepicker__month .react-datepicker__day--today {
+  font-weight: unset;
+}
+body .react-datepicker .calendar-layout .react-datepicker__month-container .react-datepicker__month .react-datepicker__day--keyboard-selected {
+  background-color: #c9d786;
+}
+body .employee-modal {
+  width: auto;
+  border-radius: 16px;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  padding: 16px;
+  background: #fff;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+}
+body .employee-modal p {
+  margin: 0 0 16px 0;
+}
+body .employee-modal button {
+  font-family: "Montserrat";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 40px;
+  margin: auto;
+  background-color: #eeeeee;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+body .css-13cymwt-control {
+  border: none;
+  border-radius: 32px;
+  box-shadow: none;
+}
+body .css-t3ipsp-control {
+  border: none;
+  box-shadow: none;
+  border-radius: 32px;
+}
+body .css-t3ipsp-control input {
+  box-shadow: none;
+}
+body .input-container:has(.css-b62m3t-container) > label + * {
+  padding: 0 !important;
+  transition: all 100ms ease;
+}
+body .css-166bipr-Input,
+body .css-qbdosj-Input {
+  cursor: text;
+}
+body .input-container:has(.css-b62m3t-container) > label + *:hover,
+body .input-container:has(.css-b62m3t-container) > label:hover + * {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+}
+body .css-1nmdiq5-menu {
+  border-radius: 16px;
+  overflow: hidden;
+  border: none;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+}
+body .css-1nmdiq5-menu .css-1n6sfyn-MenuList {
+  padding: 0;
+  border-radius: 16px;
+  border: none;
+}
+body .css-1nmdiq5-menu .css-1n6sfyn-MenuList .css-10wo9uf-option {
+  color: #586f08;
+}
+body .css-1nmdiq5-menu .css-1n6sfyn-MenuList .css-d7l1ni-option {
+  background-color: #eeeeee;
+  color: #586f08;
+}
+body .css-1nmdiq5-menu .css-1n6sfyn-MenuList .css-tr4s17-option {
+  background-color: #93ad18;
+  color: #fff;
+  font-weight: 700;
+}
+body .input-container:has(input:focus) > label + * {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
 }
 
 /*# sourceMappingURL=style.css.map */

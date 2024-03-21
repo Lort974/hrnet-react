@@ -48,13 +48,15 @@
       box-sizing: border-box;
       background-color: $light-green;
       border-radius: 50%;
+      cursor: pointer;
       > svg {
         fill: $white;
       }
     }
   }
   > :nth-child(1):has(input:hover),
-  > :nth-child(1):has(input:focus) {
+  > :nth-child(1):has(input:focus),
+  > :nth-child(1):has(span:hover) {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
   }
   table {
@@ -84,7 +86,8 @@
           user-select: none;
           position: relative;
           > span:nth-child(1) {
-            margin-left: 12px;
+            margin-left: 10px;
+            display: inline-block;
           }
           > span:nth-child(2) {
             position: absolute;
@@ -102,7 +105,7 @@
           border-bottom-left-radius: 40px;
           padding-left: 8px;
           > span:nth-child(1) {
-            margin-left: 8px;
+            margin-left: 6px;
           }
         }
         th:last-child {
@@ -164,9 +167,14 @@
       font-size: 16px;
       font-family: "Montserrat";
       background: $light-grey;
+      transition: all 100ms ease;
     }
     > select:focus-visible {
       outline: none;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+    }
+    > select:hover {
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
     }
   }
   > :nth-child(4) {

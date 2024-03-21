@@ -3,6 +3,12 @@ const DataTableFilter = ({ setSearchTerm, data }) => {
     setSearchTerm(e.target.value);
   };
 
+  const focusSearch = (e) => {
+    const parentDiv = e.currentTarget.parentNode;
+    const searchBar = parentDiv.childNodes[0];
+    searchBar.focus();
+  };
+
   return (
     <div>
       <input
@@ -11,7 +17,7 @@ const DataTableFilter = ({ setSearchTerm, data }) => {
         name="table-search"
         placeholder="Search into the table..."
       />
-      <span>
+      <span onClick={(e) => focusSearch(e)}>
         <svg
           height="24px"
           width="24px"
