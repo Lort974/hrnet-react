@@ -335,18 +335,6 @@
       "state": "TX",
       "zipCode": "78701",
       "department": "Engineering"
-    },
-    {
-      "id": "760c",
-      "firstName": "Bigey",
-      "lastName": "Bigey",
-      "dateOfBirth": "04/03/2024",
-      "startDate": "06/03/2024",
-      "address": "71T AVENUE ROGER SALENGRO",
-      "city": "AMBERIEU EN BUGEY",
-      "state": "CO",
-      "zipCode": "01500",
-      "department": "Engineering"
     }
   ]
 }

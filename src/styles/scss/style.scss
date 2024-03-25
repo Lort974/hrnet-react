@@ -228,12 +228,31 @@ body {
     transform: translate(-50%, -50%);
     top: 50%;
     left: 50%;
-    padding: 16px;
+    padding: 32px;
     background: $white;
     text-align: center;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
-    p {
-      margin: 0 0 16px 0;
+    h2 {
+      margin: 0 0 32px 0;
+      line-height: 40px;
+      text-align: left;
+    }
+    ul {
+      list-style-type: none;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      padding: 0;
+      li {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        text-align: left;
+        gap: 16px;
+
+        span:first-child {
+          font-weight: 700;
+        }
+      }
     }
     button {
       font-family: "Montserrat";
@@ -242,11 +261,13 @@ body {
       justify-content: center;
       height: 40px;
       width: 40px;
-      margin: auto;
       background-color: $light-grey;
       border: none;
       border-radius: 50%;
       cursor: pointer;
+      position: absolute;
+      right: 32px;
+      top: 32px;
     }
   }
 

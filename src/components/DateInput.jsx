@@ -9,7 +9,7 @@ registerLocale("fr", fr);
 // import 'react-datepicker/dist/react-datepicker-cssmodules.css';
 
 const DateInput = ({ id, name, label, type, order, formId, dataOrder }) => {
-  const [startDate, setStartDate] = useState(null);
+  const [currentDate, setCurrentDate] = useState(null);
 
   const reorderDatePickers = () => {
     const inputContainer = document.querySelector(
@@ -61,8 +61,8 @@ const DateInput = ({ id, name, label, type, order, formId, dataOrder }) => {
 
   return (
     <DatePicker
-      selected={startDate}
-      onChange={(date) => setStartDate(date)}
+      selected={currentDate}
+      onChange={(date) => setCurrentDate(date)}
       dateFormat="dd/MM/yyyy"
       calendarContainer={MyContainer}
       customInput={<ExampleCustomInput />}

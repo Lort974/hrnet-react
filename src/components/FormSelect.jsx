@@ -42,7 +42,7 @@ const FormSelect = ({
         onChange={handleChange}
         options={options}
         styles={{ order: { order } }}
-        placeholder={"Type or select a " + label.toLowerCase() + "..."}
+        placeholder=""
         required={true}
         data-order={dataOrder}
       />

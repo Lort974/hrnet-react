@@ -109,9 +109,25 @@ const Form = ({ className, inputs, dateInputs, selects, formId }) => {
     }
   };
 
-  useEffect(() => {
-    const inputs = document.querySelectorAll("input");
-  }, []);
+  //Fonction pour effacer les champs du formulaire à la fermeture de la modale
+  const eraseFields = () => {
+    //Tous les inputs du form
+    const allFields = newEmployeeForm.current.querySelectorAll("input");
+    //Les fake inputs sont les div qui affichent la valeur cliquée dans react-select
+    const fakeFields = newEmployeeForm.current.querySelectorAll(
+      ".css-1dimb5e-singleValue"
+    );
+    allFields.forEach((field) => {
+      field.value = "";
+    });
+    fakeFields.forEach((field) => {
+      field.textContent = "";
+    });
+  };
+
+  // useEffect(() => {
+  //   const inputs = document.querySelectorAll("input");
+  // }, []);
 
   return (
     <>
@@ -142,46 +158,53 @@ const Form = ({ className, inputs, dateInputs, selects, formId }) => {
         id="confirmation"
         className="employee-modal"
       >
-        <p>Employee created!</p>
+        <h2>Employee created!</h2>
         <ul>
           <li>
-            {newEmployeeForm.current[0].name} :{" "}
-            {newEmployeeForm.current[0].value}
+            <span>First Name</span>
+            <span>{newEmployeeForm.current[0].value}</span>
           </li>
           <li>
-            {newEmployeeForm.current[1].name} :{" "}
-            {newEmployeeForm.current[1].value}
+            <span>Last Name</span>
+            <span>{newEmployeeForm.current[1].value}</span>
           </li>
           <li>
-            {newEmployeeForm.current[2].name} :{" "}
-            {newEmployeeForm.current[2].value}
+            <span>Address</span>
+            <span>{newEmployeeForm.current[2].value}</span>
           </li>
           <li>
-            {newEmployeeForm.current[3].name} :{" "}
-            {newEmployeeForm.current[3].value}
+            <span>City</span>
+            <span>{newEmployeeForm.current[3].value}</span>
           </li>
           <li>
-            {newEmployeeForm.current[4].name} :{" "}
-            {newEmployeeForm.current[4].value}
+            <span>Zip Code</span>
+            <span>{newEmployeeForm.current[4].value}</span>
           </li>
           <li>
-            {newEmployeeForm.current[5].name} :{" "}
-            {newEmployeeForm.current[5].value}
+            <span>Date Of Birth</span>
+            <span>{newEmployeeForm.current[5].value}</span>
           </li>
           <li>
-            {newEmployeeForm.current[6].name} :{" "}
-            {newEmployeeForm.current[6].value}
+            <span>Start Date</span>
+            <span>{newEmployeeForm.current[6].value}</span>
           </li>
           <li>
-            {newEmployeeForm.current[8].name} :{" "}
-            {newEmployeeForm.current[8].value}
+            <span>State</span>
+            <span>{newEmployeeForm.current[8].value}</span>
           </li>
           <li>
-            {newEmployeeForm.current[10].name} :{" "}
-            {newEmployeeForm.current[10].value}
+            <span>Department</span>
+            <span>{newEmployeeForm.current[10].value}</span>
           </li>
         </ul>
-        <button onClick={() => setModalIsOpen(false)}>X</button>
+        <button
+          onClick={() => {
+            setModalIsOpen(false);
+            eraseFields();
+          }}
+        >
+          X
+        </button>
       </Modal>
     </>
   );

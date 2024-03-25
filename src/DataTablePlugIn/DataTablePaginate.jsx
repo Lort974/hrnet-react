@@ -1,15 +1,17 @@
 const DataTablePaginate = ({ pagesNumber, setCurrentPage, currentPage }) => {
   let pagesButtons = [];
-  pagesButtons.push(
-    <button
-      key="first"
-      onClick={(e) => setCurrentPage(1)}
-      className="other"
-      type="button"
-    >
-      {"<<"}
-    </button>
-  );
+  if (pagesNumber > 1) {
+    pagesButtons.push(
+      <button
+        key="first"
+        onClick={(e) => setCurrentPage(1)}
+        className="other"
+        type="button"
+      >
+        {"<<"}
+      </button>
+    );
+  }
   if (currentPage > 1) {
     pagesButtons.push(
       <button
@@ -46,16 +48,18 @@ const DataTablePaginate = ({ pagesNumber, setCurrentPage, currentPage }) => {
       </button>
     );
   }
-  pagesButtons.push(
-    <button
-      key="last"
-      onClick={(e) => setCurrentPage(pagesNumber)}
-      className="other"
-      type="button"
-    >
-      {">>"}
-    </button>
-  );
+  if (pagesNumber > 1) {
+    pagesButtons.push(
+      <button
+        key="last"
+        onClick={(e) => setCurrentPage(pagesNumber)}
+        className="other"
+        type="button"
+      >
+        {">>"}
+      </button>
+    );
+  }
   return <div>{pagesButtons}</div>;
 };
 
