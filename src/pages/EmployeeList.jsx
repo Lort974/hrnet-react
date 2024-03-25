@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
-import DataTableWrapper from "../DataTablePlugIn/DataTableWrapper";
+// import DataTableWrapper from "../DataTablePlugIn/DataTableWrapper";
 import { getEmployees } from "../services/api";
+
+import { DataTableWrapper } from "data-table-by-lort";
 
 const EmployeeList = () => {
   const [employeesList, setEmployeesList] = useState([]);
