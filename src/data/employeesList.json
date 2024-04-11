@@ -335,6 +335,30 @@
       "state": "TX",
       "zipCode": "78701",
       "department": "Engineering"
+    },
+    {
+      "id": "7771",
+      "firstName": "John",
+      "lastName": "Doe",
+      "dateOfBirth": "01/03/2024",
+      "startDate": "02/03/2024",
+      "address": "564 Grande Rue Izernore",
+      "city": "SAINT-JOSEPH",
+      "state": "AS",
+      "zipCode": "01500",
+      "department": "Marketing"
+    },
+    {
+      "id": "848b",
+      "firstName": "John",
+      "lastName": "Doe",
+      "dateOfBirth": "01/03/2024",
+      "startDate": "02/03/2024",
+      "address": "564 Grande Rue Izernore",
+      "city": "SAINT-JOSEPH",
+      "state": "GA",
+      "zipCode": "01500",
+      "department": "Human Ressources"
     }
   ]
 }

@@ -1,3 +1,4 @@
+// Importation des composants et des hooks nécessaires
 import FormInput from "./FormInput";
 import FormSelect from "./FormSelect";
 import DateInput from "./DateInput";
@@ -6,14 +7,16 @@ import Modal from "react-modal";
 import { useState } from "react";
 import { createEmployee } from "../services/api";
 
+// Configuration de l'élément racine pour le modal
 Modal.setAppElement("#root");
 
+// Composant pour le formulaire
 const Form = ({ className, inputs, dateInputs, selects, formId }) => {
+  // Définition des états pour le modal et le focus
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [focus, setFocus] = useState("input[data-order='1']");
 
-  //L'ordre des inputs est réorganisé en css, donc l'ordre HTML n'est pas le bon.
-  //On doit donc gérer l'appui sur "Tab" et faire en sorte de passer à l'input suivant :
+  // Utilisation de useEffect pour gérer l'appui sur "Tab" et passer à l'input suivant
   useEffect(() => {
     const focusedInput = document.querySelector(focus);
     if (focusedInput) {
@@ -36,6 +39,7 @@ const Form = ({ className, inputs, dateInputs, selects, formId }) => {
     }
   }, [focus]);
 
+  // Création des listes d'inputs, de dateInputs et de selects
   let formContent = [];
   const inputsList = inputs.map((input) => {
     return (
@@ -79,6 +83,7 @@ const Form = ({ className, inputs, dateInputs, selects, formId }) => {
     );
   });
 
+  // Ajout des listes au contenu du formulaire
   formContent = [
     ...formContent,
     ...inputsList,
@@ -86,8 +91,10 @@ const Form = ({ className, inputs, dateInputs, selects, formId }) => {
     ...selectsList,
   ];
 
+  // Référence pour le formulaire de création d'un nouvel employé
   const newEmployeeForm = useRef("new-employee-form");
 
+  // Fonction pour gérer la soumission du formulaire
   const handleSubmit = async (e) => {
     e.preventDefault();
     const employeeData = {
@@ -109,11 +116,11 @@ const Form = ({ className, inputs, dateInputs, selects, formId }) => {
     }
   };
 
-  //Fonction pour effacer les champs du formulaire à la fermeture de la modale
+  // Fonction pour effacer les champs du formulaire à la fermeture de la modale
   const eraseFields = () => {
-    //Tous les inputs du form
+    // Tous les inputs du form
     const allFields = newEmployeeForm.current.querySelectorAll("input");
-    //Les fake inputs sont les div qui affichent la valeur cliquée dans react-select
+    // Les fake inputs sont les div qui affichent la valeur cliquée dans react-select
     const fakeFields = newEmployeeForm.current.querySelectorAll(
       ".css-1dimb5e-singleValue"
     );
@@ -125,8 +132,10 @@ const Form = ({ className, inputs, dateInputs, selects, formId }) => {
     });
   };
 
+  // Retour du formulaire et du modal
   return (
     <>
+      {/* Formulaire pour la création d'un nouvel employé */}
       <form
         className={className}
         id={formId}
@@ -135,8 +144,10 @@ const Form = ({ className, inputs, dateInputs, selects, formId }) => {
           handleSubmit(e);
         }}
       >
+        {/* Contenu du formulaire */}
         {formContent}
 
+        {/* Bouton de soumission du formulaire */}
         <input
           type="submit"
           className="button"
@@ -147,6 +158,8 @@ const Form = ({ className, inputs, dateInputs, selects, formId }) => {
           value="Save"
         />
       </form>
+
+      {/* Modal pour la confirmation de la création d'un employé */}
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={() => setModalIsOpen(false)}
@@ -156,6 +169,7 @@ const Form = ({ className, inputs, dateInputs, selects, formId }) => {
       >
         <h2>Employee created!</h2>
         <ul>
+          {/* Affichage des informations de l'employé créé */}
           <li>
             <span>First Name</span>
             <span>{newEmployeeForm.current[0].value}</span>
@@ -193,6 +207,8 @@ const Form = ({ className, inputs, dateInputs, selects, formId }) => {
             <span>{newEmployeeForm.current[10].value}</span>
           </li>
         </ul>
+
+        {/* Bouton pour fermer le modal et effacer les champs du formulaire */}
         <button
           onClick={() => {
             setModalIsOpen(false);
@@ -205,5 +221,5 @@ const Form = ({ className, inputs, dateInputs, selects, formId }) => {
     </>
   );
 };
-
+// Exportation du composant Form
 export default Form;

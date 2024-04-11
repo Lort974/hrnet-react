@@ -1,6 +1,8 @@
+// Importation des hooks et du composant Select
 import React, { useState, useEffect } from "react";
 import Select from "react-select";
 
+// Composant pour un champ de sélection du formulaire
 const FormSelect = ({
   id,
   name,
@@ -10,12 +12,15 @@ const FormSelect = ({
   dataOrder,
   setFocus,
 }) => {
+  // Définition de l'état pour l'option sélectionnée
   const [selectedOption, setSelectedOption] = useState(null);
 
+  // Fonction pour gérer le changement de l'option sélectionnée
   const handleChange = (option) => {
     setSelectedOption(option);
   };
 
+  // Fonction pour réorganiser les selects
   const reorderSelects = () => {
     const inputContainer = document.getElementById(id);
     inputContainer.parentNode.style.order = order;
@@ -23,10 +28,12 @@ const FormSelect = ({
     input.setAttribute("data-order", dataOrder);
   };
 
+  // Utilisation de useEffect pour réorganiser les selects au chargement du composant
   useEffect(() => {
     reorderSelects();
   }, []);
 
+  // Retour du div contenant le label et le select
   return (
     <div className="input-container">
       <label
@@ -50,4 +57,5 @@ const FormSelect = ({
   );
 };
 
+// Exportation du composant FormSelect
 export default FormSelect;
