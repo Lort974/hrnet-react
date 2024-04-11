@@ -125,10 +125,6 @@ const Form = ({ className, inputs, dateInputs, selects, formId }) => {
     });
   };
 
-  // useEffect(() => {
-  //   const inputs = document.querySelectorAll("input");
-  // }, []);
-
   return (
     <>
       <form
