@@ -69,7 +69,7 @@ const DateInput = ({ id, name, label, type, order, formId, dataOrder }) => {
     <DatePicker
       selected={currentDate}
       onChange={(date) => setCurrentDate(date)}
-      dateFormat="dd/MM/yyyy"
+      dateFormat="yyyy-MM-dd"
       calendarContainer={MyContainer}
       customInput={<ExampleCustomInput />}
       maxDate={new Date()}

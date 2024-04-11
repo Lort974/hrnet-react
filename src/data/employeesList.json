@@ -359,6 +359,30 @@
       "state": "GA",
       "zipCode": "01500",
       "department": "Human Ressources"
+    },
+    {
+      "id": "c519",
+      "firstName": "John",
+      "lastName": "Doe",
+      "dateOfBirth": "2024/04/04",
+      "startDate": "2024/04/03",
+      "address": "564 Grande Rue Izernore",
+      "city": "SAINT-JOSEPH",
+      "state": "CT",
+      "zipCode": "01500",
+      "department": "Engineering"
+    },
+    {
+      "id": "77e6",
+      "firstName": "John",
+      "lastName": "Doe",
+      "dateOfBirth": "2024-04-10",
+      "startDate": "2024-04-04",
+      "address": "564 Grande Rue Izernore",
+      "city": "SAINT-JOSEPH",
+      "state": "NE",
+      "zipCode": "01500",
+      "department": "Sales"
     }
   ]
 }
