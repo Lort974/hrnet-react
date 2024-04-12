@@ -111,6 +111,14 @@ const Form = ({ className, inputs, dateInputs, selects, formId }) => {
     const res = await createEmployee(employeeData);
     if (res.status === 201) {
       setModalIsOpen(true);
+      setTimeout(() => {
+        const modalBackground =
+          document.getElementById("confirmation").parentElement;
+        modalBackground.addEventListener("click", (e) => {
+          setModalIsOpen(false);
+          eraseFields();
+        });
+      }, 100);
     } else {
       alert(res);
     }

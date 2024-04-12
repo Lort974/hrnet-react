@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 .employees-table-wrapper {
+  overflow-x: auto;
   width: 100%;
   box-sizing: border-box;
   display: grid;
@@ -211,6 +212,7 @@ body {
 }
 body header {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   background-color: #fff;
@@ -231,6 +233,10 @@ body header .text-logo {
 }
 body header .text-logo img {
   width: 96px;
+}
+body header nav {
+  margin-bottom: 16px;
+  margin-top: 16px;
 }
 body header nav a {
   font-size: 16px;
