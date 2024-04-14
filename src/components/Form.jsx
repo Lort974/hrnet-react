@@ -5,7 +5,8 @@ import DateInput from "./DateInput";
 import { useEffect, useRef } from "react";
 import Modal from "react-modal";
 import { useState } from "react";
-import { createEmployee } from "../services/api";
+import { createEmployee } from "../actions/employees.action";
+import { useDispatch } from "react-redux";
 
 // Configuration de l'élément racine pour le modal
 Modal.setAppElement("#root");
@@ -15,6 +16,8 @@ const Form = ({ className, inputs, dateInputs, selects, formId }) => {
   // Définition des états pour le modal et le focus
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [focus, setFocus] = useState("input[data-order='1']");
+
+  const dispatch = useDispatch();
 
   // Utilisation de useEffect pour gérer l'appui sur "Tab" et passer à l'input suivant
   useEffect(() => {
@@ -108,20 +111,30 @@ const Form = ({ className, inputs, dateInputs, selects, formId }) => {
       zipCode: newEmployeeForm.current[4].value,
       department: newEmployeeForm.current[10].value,
     };
-    const res = await createEmployee(employeeData);
-    if (res.status === 201) {
-      setModalIsOpen(true);
-      setTimeout(() => {
-        const modalBackground =
-          document.getElementById("confirmation").parentElement;
-        modalBackground.addEventListener("click", (e) => {
-          setModalIsOpen(false);
-          eraseFields();
-        });
-      }, 100);
-    } else {
-      alert(res);
-    }
+    dispatch(createEmployee(employeeData));
+    setModalIsOpen(true);
+    setTimeout(() => {
+      const modalBackground =
+        document.getElementById("confirmation").parentElement;
+      modalBackground.addEventListener("click", (e) => {
+        setModalIsOpen(false);
+        eraseFields();
+      });
+    }, 100);
+    // const res = await createEmployee(employeeData);
+    // if (res.status === 201) {
+    //   setModalIsOpen(true);
+    //   setTimeout(() => {
+    //     const modalBackground =
+    //       document.getElementById("confirmation").parentElement;
+    //     modalBackground.addEventListener("click", (e) => {
+    //       setModalIsOpen(false);
+    //       eraseFields();
+    //     });
+    //   }, 100);
+    // } else {
+    //   alert(res);
+    // }
   };
 
   // Fonction pour effacer les champs du formulaire à la fermeture de la modale

@@ -1,42 +1,57 @@
-// Importation des hooks et des services nécessaires
-import { useEffect, useState } from "react";
-import { getEmployees } from "../services/api";
+// // Importation des hooks et des services nécessaires
+// import { useEffect, useState } from "react";
+// import { getEmployees } from "../services/api";
 
 // Importation du composant de tableau de données
 import { DataTableWrapper } from "data-table-by-lort";
 
+import { useSelector } from "react-redux";
+
 // Composant pour afficher la liste des employés
 const EmployeeList = () => {
-  // Définition des états pour la liste des employés et la réponse de l'API
-  const [employeesList, setEmployeesList] = useState([]);
-  const [response, setResponse] = useState(null);
+  // // Définition des états pour la liste des employés et la réponse de l'API
+  // const [employeesList, setEmployeesList] = useState([]);
+  // const [response, setResponse] = useState(null);
 
-  // Utilisation de useEffect pour récupérer les données au chargement du composant
-  useEffect(() => {
-    // Fonction pour récupérer les employés
-    const fetchEmployees = async () => {
-      const res = await getEmployees();
-      setEmployeesList(res.data);
-      setResponse(res);
-    };
+  // // Utilisation de useEffect pour récupérer les données au chargement du composant
+  // useEffect(() => {
+  //   // Fonction pour récupérer les employés
+  //   const fetchEmployees = async () => {
+  //     const res = await getEmployees();
+  //     setEmployeesList(res.data);
+  //     setResponse(res);
+  //   };
 
-    // Appel de la fonction pour récupérer les employés
-    fetchEmployees();
-  }, []);
+  //   // Appel de la fonction pour récupérer les employés
+  //   fetchEmployees();
+  // }, []);
 
-  // Gestion des erreurs de l'API
-  if (response) {
-    if (response.status === "error") {
-      return (
-        <>
-          <div id="employee-div" className="container">
-            <h1>Current Employees</h1>
-            <p>{response.data}</p>
-          </div>
-        </>
-      );
-    }
+  const employees = useSelector((state) => state.employeesReducer);
+
+  if (Object.keys(employees).length === 0 && employees.constructor === Object) {
+    return (
+      <>
+        <div id="employee-div" className="container">
+          <h1>Current Employees</h1>
+          <p>Loading data...</p>
+        </div>
+      </>
+    );
   }
+
+  // // Gestion des erreurs de l'API
+  // if (response) {
+  //   if (response.status === "error") {
+  //     return (
+  //       <>
+  //         <div id="employee-div" className="container">
+  //           <h1>Current Employees</h1>
+  //           <p>{response.data}</p>
+  //         </div>
+  //       </>
+  //     );
+  //   }
+  // }
 
   // Affichage de la liste des employés dans un tableau de données
   return (
@@ -44,7 +59,7 @@ const EmployeeList = () => {
       <div id="employee-div" className="container">
         <h1>Current Employees</h1>
         <DataTableWrapper
-          data={employeesList}
+          data={employees}
           id="data-table"
           columns={[
             { title: "First Name", valueName: "firstName" },
