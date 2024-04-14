@@ -335,66 +335,6 @@
       "state": "TX",
       "zipCode": "78701",
       "department": "Engineering"
-    },
-    {
-      "id": "818d",
-      "firstName": "John",
-      "lastName": "Doe",
-      "dateOfBirth": "2023-12-01",
-      "startDate": "2024-04-11",
-      "address": "3 rue de la mer noire",
-      "city": "Manchester",
-      "state": "NY",
-      "zipCode": "75000",
-      "department": "Marketing"
-    },
-    {
-      "id": "7d7b",
-      "firstName": "John",
-      "lastName": "Doe",
-      "dateOfBirth": "2024-04-03",
-      "startDate": "2024-04-11",
-      "address": "3 rue de la mer noire",
-      "city": "Manchester",
-      "state": "AZ",
-      "zipCode": "06000",
-      "department": "Marketing"
-    },
-    {
-      "id": "3e32",
-      "firstName": "John",
-      "lastName": "Doe",
-      "dateOfBirth": "2024-04-03",
-      "startDate": "2024-04-11",
-      "address": "3 rue de la mer noire",
-      "city": "Manchester",
-      "state": "AS",
-      "zipCode": "06000",
-      "department": "Marketing"
-    },
-    {
-      "id": "5de5",
-      "firstName": "Johnzzz",
-      "lastName": "Doe",
-      "dateOfBirth": "2024-04-03",
-      "startDate": "2024-04-11",
-      "address": "3 rue de la mer noire",
-      "city": "Manchester",
-      "state": "AZ",
-      "zipCode": "06000",
-      "department": "Engineering"
-    },
-    {
-      "id": "02c5",
-      "firstName": "Johnzzzyy",
-      "lastName": "Doe",
-      "dateOfBirth": "2024-04-03",
-      "startDate": "2024-04-11",
-      "address": "3 rue de la mer noire",
-      "city": "Manchester",
-      "state": "AZ",
-      "zipCode": "06000",
-      "department": "Legal"
     }
   ]
 }

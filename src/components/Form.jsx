@@ -121,20 +121,6 @@ const Form = ({ className, inputs, dateInputs, selects, formId }) => {
         eraseFields();
       });
     }, 100);
-    // const res = await createEmployee(employeeData);
-    // if (res.status === 201) {
-    //   setModalIsOpen(true);
-    //   setTimeout(() => {
-    //     const modalBackground =
-    //       document.getElementById("confirmation").parentElement;
-    //     modalBackground.addEventListener("click", (e) => {
-    //       setModalIsOpen(false);
-    //       eraseFields();
-    //     });
-    //   }, 100);
-    // } else {
-    //   alert(res);
-    // }
   };
 
   // Fonction pour effacer les champs du formulaire à la fermeture de la modale
